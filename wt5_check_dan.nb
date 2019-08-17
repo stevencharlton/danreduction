@@ -1,0 +1,242 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6964,        234]
+NotebookOptionsPosition[      6167,        202]
+NotebookOutlinePosition[      6514,        217]
+CellTagsIndexPosition[      6471,        214]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<PolyLogToolsLite.m\>\""}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6975618189424686`*^9, 3.697561823181487*^9}, {
+  3.697600495081976*^9, 3.6976005068997707`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"cr", "[", 
+    RowBox[{"{", 
+     RowBox[{"a_", ",", "b_", ",", "c_", ",", "d_"}], "}"}], "]"}], " ", ":=",
+    " ", 
+   RowBox[{"Factor", "[", 
+    RowBox[{"Limit", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"a", " ", "-", " ", "c"}], ")"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"a", " ", "-", " ", "d"}], ")"}]}], " ", "/", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"b", " ", "-", " ", "c"}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"b", "-", "d"}], ")"}]}], ")"}]}], ",", " ", 
+      RowBox[{"Inf", "\[Rule]", "Infinity"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cr", "[", "l_List", "]"}], " ", ":=", " ", 
+   RowBox[{"Sequence", "@@", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"cr", "[", 
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"l", "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ";;", "3"}], "]"}], "]"}], ",", " ", 
+          RowBox[{"{", "#", "}"}]}], "]"}], "]"}], "&"}], "/@", 
+      RowBox[{"l", "[", 
+       RowBox[{"[", 
+        RowBox[{"4", ";;", "All"}], "]"}], "]"}]}], ")"}]}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.6975619746562567`*^9, 3.6975620142885017`*^9}, {
+  3.6975620983564434`*^9, 3.6975621036729717`*^9}, {3.697562161927788*^9, 
+  3.6975621760368257`*^9}, {3.6976009803734174`*^9, 3.6976009829214897`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"II", "[", 
+    RowBox[{"indices_List", ",", "arguments_List"}], "]"}], "/;", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Length", "[", "indices", "]"}], "\[Equal]", 
+     RowBox[{"Length", "[", "arguments", "]"}]}], "&&", 
+    RowBox[{"VectorQ", "[", 
+     RowBox[{"indices", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"IntegerQ", "[", "#", "]"}], "&&", 
+        RowBox[{"#", "\[GreaterEqual]", "1"}]}], "&"}]}], "]"}]}]}], ":=", 
+  RowBox[{"G", "@@", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"Table", "[", 
+           RowBox[{"0", ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"indices", "[", 
+               RowBox[{"[", "j", "]"}], "]"}], "-", "1"}], "}"}]}], "]"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"arguments", "[", 
+            RowBox[{"[", "j", "]"}], "]"}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", 
+          RowBox[{"Length", "[", "indices", "]"}], ",", "1", ",", 
+          RowBox[{"-", "1"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"{", "1", "}"}]}], "]"}], "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Get", "[", 
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<wt5_dan_precomputed.m\>\""}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6976029430338097`*^9, 3.697602954085355*^9}, {
+  3.697603004615076*^9, 3.6976030071320224`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"wt5DanAllNPrecomputed", "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"cri", "\[Rule]", "cr"}], ",", 
+        RowBox[{"IIi", "\[Rule]", "II"}]}], "}"}]}], "//", "CreateTensor"}], "//",
+     "sh"}], "//", "flatTensor"}], "//", "Expand"}]], "Input",
+ CellChangeTimes->{
+  3.697562880145352*^9, {3.6976009626950817`*^9, 3.6976009951766453`*^9}, 
+   3.6976023550108967`*^9, {3.6976029558985186`*^9, 3.697602961760596*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.6976038463441935`*^9, 3.6976169489468393`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"wt5DanOddNPrecomputed", "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"cri", "\[Rule]", "cr"}], ",", 
+        RowBox[{"IIi", "\[Rule]", "II"}]}], "}"}]}], "//", "CreateTensor"}], "//",
+     "sh"}], "//", "flatTensor"}], "//", "Expand"}]], "Input",
+ CellChangeTimes->{{3.6975628863541164`*^9, 3.6975628926875916`*^9}, {
+  3.6976030125411787`*^9, 3.6976030157612267`*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.6975949965124407`*^9, 3.6976040219491796`*^9, 
+  3.697617108647313*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"wt5DanOddNas311and32and5Precomputed", "/.", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"cri", "\[Rule]", "cr"}], ",", 
+        RowBox[{"IIi", "\[Rule]", "II"}]}], "}"}]}], "//", "CreateTensor"}], "//",
+     "sh"}], "//", "flatTensor"}], "//", "Expand"}]], "Input",
+ CellChangeTimes->{{3.6975628863541164`*^9, 3.697562898427511*^9}, {
+  3.697603017418094*^9, 3.69760303147082*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.697604516574918*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"wt5DanOddNas32delPrecomputed", "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"cri", "\[Rule]", "cr"}], ",", 
+       RowBox[{"IIi", "\[Rule]", "II"}]}], "}"}]}], "//", "CreateTensor"}], "//",
+    "del"}], "//", "Expand"}]], "Input"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.697617108662935*^9}]
+}, Open  ]]
+},
+WindowSize->{1536, 794},
+WindowMargins->{{-8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 289, 7, 30, "Input"],
+Cell[850, 29, 1503, 44, 50, "Input"],
+Cell[2356, 75, 1268, 37, 50, "Input"],
+Cell[3627, 114, 292, 7, 30, "Input"],
+Cell[CellGroupData[{
+Cell[3944, 125, 505, 13, 30, "Input"],
+Cell[4452, 140, 96, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4585, 146, 457, 12, 30, "Input"],
+Cell[5045, 160, 121, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5203, 167, 464, 12, 30, "Input"],
+Cell[5670, 181, 70, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5777, 187, 301, 9, 30, "Input"],
+Cell[6081, 198, 70, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
